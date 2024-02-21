@@ -2,7 +2,7 @@
 
 function Fruits({fruit, btnType, setCounter, counter, btnLock, count}) {
     return (
-        <li className={"container"}>
+        <li className={counter >= 2 ? "container-color" : "container"}>
             <h2>{fruit}</h2>
             <button type={btnType} onClick={() => setCounter(counter-1)} disabled={btnLock}>-</button>
             <p>{count}</p>

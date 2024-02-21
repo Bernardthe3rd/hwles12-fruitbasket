@@ -72,7 +72,9 @@ function App() {
 
   return (
     <>
-        <h1>Fruitmand bezorgservice</h1>
+        <header className={"header"}>
+            <h1>Fruitmand bezorgservice</h1>
+        </header>
         <ul>
             <Fruits
                 fruit={fruits[0]}
@@ -110,7 +112,8 @@ function App() {
         <BigButtons type={"reset"} btnClick={resetAllCounters}>Reset</BigButtons>
 
         <form onSubmit={handleSubmit}>
-            <fieldset className={"container-form"}> <legend>Gegevens</legend>
+            <fieldset className={"container-form"}>
+                <legend>Gegevens</legend>
                 <Input
                     nameField={"Voornaam"}
                     labelFor={"input-firstname"}

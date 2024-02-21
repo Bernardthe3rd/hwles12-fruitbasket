@@ -1,3 +1,10 @@
+header {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px 20px;
+    background-color: lightsteelblue;
+}
+
 ul {
     max-width: 1200px;
     margin: 0 auto;
@@ -9,6 +16,18 @@ ul {
     margin: 20px auto;
     padding: 0 20px;
     border: 3px solid black;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.container-color {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    border: 3px dotted darkred;
 
     display: flex;
     flex-direction: row;
