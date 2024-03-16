@@ -45,29 +45,38 @@ function App() {
         conditions: false
     })
 
+    // Gekregen feedback: hieronder kan veel simpeler geschreven worden.
+    // Als de name zou corresponderen met de property naam van de formstate, dan kan dit een stuk simpeler:
     function handleFormChange (f) {
-        const changedFirstName = f.target.name
-        const changedLastName = f.target.name
-        const changedAge = f.target.name
-        const changedPostal = f.target.name
-        const changedFrequency = f.target.name
-        const changedTimeframe = f.target.name
-        const changedComments = f.target.name
-        const valueConditions = f.target.type === "checkbox" ? f.target.checked : f.target.value
-        const changedConditions = f.target.name
-
         setFormState({
             ...formState,
-            [changedFirstName]: f.target.value,
-            [changedLastName]: f.target.value,
-            [changedAge]: f.target.value,
-            [changedPostal]: f.target.value,
-            [changedFrequency]: f.target.value,
-            [changedTimeframe]: f.target.value,
-            [changedComments]: f.target.value,
-            [changedConditions]: valueConditions
+            [f.target.name]: f.target.type === "checkbox" ? f.target.checked : f.target.value,
         })
     }
+    // In plaats van uitgeschreven hieronder:
+    // function handleFormChange (f) {
+    //     const changedFirstName = f.target.name
+    //     const changedLastName = f.target.name
+    //     const changedAge = f.target.name
+    //     const changedPostal = f.target.name
+    //     const changedFrequency = f.target.name
+    //     const changedTimeframe = f.target.name
+    //     const changedComments = f.target.name
+    //     const valueConditions = f.target.type === "checkbox" ? f.target.checked : f.target.value
+    //     const changedConditions = f.target.name
+    //
+    //     setFormState({
+    //         ...formState,
+    //         [changedFirstName]: f.target.value,
+    //         [changedLastName]: f.target.value,
+    //         [changedAge]: f.target.value,
+    //         [changedPostal]: f.target.value,
+    //         [changedFrequency]: f.target.value,
+    //         [changedTimeframe]: f.target.value,
+    //         [changedComments]: f.target.value,
+    //         [changedConditions]: valueConditions
+    //     })
+    // }
 
 
   return (
@@ -80,32 +89,34 @@ function App() {
                 fruit={fruits[0]}
                 btnType={"button"}
                 setCounter={setCounterAardbeien}
-                counter={counterAardbeien}
-                btnLock={counterAardbeien === 0}
+                // counter={counterAardbeien}
+                //overbodig gezien je de count al hebt
+                // btnLock={counterAardbeien === 0}
+                //btnlock is overbodig, kan counter <= 0 bij fruits component neerzetten
                 count={counterAardbeien}
             />
             <Fruits
                 fruit={fruits[1]}
                 btnType={"button"}
                 setCounter={setCounterBananen}
-                counter={counterBananen}
-                btnLock={counterBananen === 0}
+                // counter={counterBananen}
+                // btnLock={counterBananen === 0}
                 count={counterBananen}
             />
             <Fruits
                 fruit={fruits[2]}
                 btnType={"button"}
                 setCounter={setCounterAppels}
-                counter={counterAppels}
-                btnLock={counterAppels === 0}
+                // counter={counterAppels}
+                // btnLock={counterAppels === 0}
                 count={counterAppels}
             />
             <Fruits
                 fruit={fruits[3]}
                 btnType={"button"}
                 setCounter={setCounterKiwis}
-                counter={counterKiwis}
-                btnLock={counterKiwis === 0}
+                // counter={counterKiwis}
+                // btnLock={counterKiwis === 0}
                 count={counterKiwis}
             />
         </ul>
